@@ -1,0 +1,34 @@
+{
+  "schema_version": "bird-native-eval-request/v1",
+  "run_id": "cpu-native-format-fixture",
+  "condition": "qwen35-9b-thinking-off",
+  "model_root": "$BIRD_ROOT/models/qwen35_9b",
+  "model_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "model_name": "Qwen/Qwen3.5-9B",
+  "dataset_name": "training-format-fixture",
+  "dataset_path": "$BIRD_ROOT/data/format-fixture/training-format-row.jsonl",
+  "mode": "thinking-off",
+  "enable_thinking": false,
+  "temperature": 1.0,
+  "top_p": null,
+  "top_k": null,
+  "min_new_tokens": null,
+  "max_response_len": 768,
+  "max_prompt_len": null,
+  "max_context_len": null,
+  "attempt_count": 1,
+  "rollout_seed": 42,
+  "evidence_class": "training-format-fixture",
+  "arms": {
+    "frozen": {
+      "output_root": "$BIRD_ROOT/runs/parser-proof/frozen",
+      "training_seed": null,
+      "adapter_path": null
+    },
+    "checkpoint": {
+      "output_root": "$BIRD_ROOT/runs/parser-proof/checkpoint",
+      "training_seed": "discarded-three-update-proof",
+      "adapter_path": "$BIRD_ROOT/runs/trial/iter_0000002/adapter"
+    }
+  }
+}

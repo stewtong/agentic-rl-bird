@@ -1,0 +1,205 @@
+{
+  "evidence_scope": "Aggregate counts for the frozen prompt comparison and the seed 42 checkpoint sweep; the per-question rows behind them are not published",
+  "source_run": "bird-qwen35-9b-checkpoint-sweep",
+  "dataset_release": "bird_sql_dev_20251106",
+  "questions": 1534,
+  "model": "Qwen3.5-9B",
+  "thinking_enabled": false,
+  "frozen_prompt_comparison": {
+    "ordered_first_draw_only": true,
+    "cells": {
+      "6turn_limits_no_schema": {
+        "questions": 1534,
+        "correct": 191,
+        "tokens": 310413,
+        "truncated": 38,
+        "turn_limit_exits": 524
+      },
+      "6turn_limits_schema_in_prompt": {
+        "questions": 1534,
+        "correct": 601,
+        "tokens": 506464,
+        "truncated": 110,
+        "turn_limit_exits": 100
+      },
+      "12turn_limits_no_schema": {
+        "questions": 1534,
+        "correct": 378,
+        "tokens": 540153,
+        "truncated": 21,
+        "turn_limit_exits": 173
+      },
+      "12turn_limits_schema_in_prompt": {
+        "questions": 1534,
+        "correct": 603,
+        "tokens": 680187,
+        "truncated": 53,
+        "turn_limit_exits": 44
+      }
+    },
+    "contrasts": {
+      "schema_effect_at_6turn_limits": {
+        "difference": 0.26727509778357234,
+        "ci95": [
+          0.242503259452412,
+          0.2926988265971317
+        ]
+      },
+      "schema_effect_at_12turn_limits": {
+        "difference": 0.14667535853976532,
+        "ci95": [
+          0.11993155149934813,
+          0.17405475880052151
+        ]
+      },
+      "limits_effect_without_schema": {
+        "difference": 0.12190352020860495,
+        "ci95": [
+          0.09647979139504563,
+          0.14667535853976532
+        ]
+      },
+      "limits_effect_with_schema": {
+        "difference": 0.001303780964797914,
+        "ci95": [
+          -0.024119947848761408,
+          0.026727509778357236
+        ]
+      },
+      "interaction": {
+        "difference": -0.12059973924380704,
+        "ci95": [
+          -0.1544980443285528,
+          -0.08604954367666232
+        ]
+      }
+    },
+    "seed": 20261120,
+    "replicates": 10000
+  },
+  "seed42_checkpoint_comparison": {
+    "draw": "Frozen draw 0 and seed 42 one-draw checkpoint evaluation",
+    "agent_limits": {
+      "turns": 12,
+      "tokens_per_call": 1536,
+      "schema_in_prompt": true
+    },
+    "baseline": {
+      "correct_EX": 603,
+      "generated_tokens": 680187
+    },
+    "optimizer_updates": {
+      "2": {
+        "correct_EX": 670,
+        "generated_tokens": 574551,
+        "truncated": 19,
+        "turn_limit_exits": 56,
+        "paired_minus_frozen_count": 67,
+        "paired_minus_frozen_pp": 4.367666232073011,
+        "interval_95_pp": [
+          1.8904823989569755,
+          6.779661016949152
+        ],
+        "improved": 218,
+        "degraded": 151,
+        "raw_sha256": "e70cd60398522bd908140dafb5caadd820b8633d81c4de81f964afef8df19fb2",
+        "export_sha256": "ae36f03eb821dd1ad2dcc17dafca6c526be89eba21ad96dc359b2610e4f8fffc"
+      },
+      "4": {
+        "correct_EX": 743,
+        "generated_tokens": 568474,
+        "truncated": 23,
+        "turn_limit_exits": 44,
+        "paired_minus_frozen_count": 140,
+        "paired_minus_frozen_pp": 9.126466753585397,
+        "interval_95_pp": [
+          6.712842242503261,
+          11.538461538461538
+        ],
+        "improved": 253,
+        "degraded": 113,
+        "raw_sha256": "7cea96a50222ca02aae1bb04f48675e85a7bd39c67be8d83a5cb71a71cc83b36",
+        "export_sha256": "9720070645a67432faa52afc722aa3c19472147195649dbc91fd5c71671aad3f"
+      },
+      "8": {
+        "correct_EX": 754,
+        "generated_tokens": 450594,
+        "truncated": 24,
+        "turn_limit_exits": 7,
+        "paired_minus_frozen_count": 151,
+        "paired_minus_frozen_pp": 9.84354628422425,
+        "interval_95_pp": [
+          7.3663624511082135,
+          12.25554106910039
+        ],
+        "improved": 260,
+        "degraded": 109,
+        "raw_sha256": "c98f81630e2140f015018c080dddb30f1e2d794d6b737c20d68f65302683d753",
+        "export_sha256": "e92b1eb5b69a5e7d3696a75896591db8db8c8a60ea654a783524b4ecfe0f3af4"
+      },
+      "16": {
+        "correct_EX": 789,
+        "generated_tokens": 363356,
+        "truncated": 14,
+        "turn_limit_exits": 3,
+        "paired_minus_frozen_count": 186,
+        "paired_minus_frozen_pp": 12.1251629726206,
+        "interval_95_pp": [
+          9.713168187744458,
+          14.471968709256844
+        ],
+        "improved": 278,
+        "degraded": 92,
+        "raw_sha256": "ad52b8dde54d3464cfc9f59fd9aa3b43707b1bd591ec58bbca9d2be6416b18e3",
+        "export_sha256": "3b088f2d9c20747fdc7e530b5951e4a809e741d840198c63cac6404d1561f8e6"
+      },
+      "32": {
+        "correct_EX": 848,
+        "generated_tokens": 561357,
+        "truncated": 8,
+        "turn_limit_exits": 29,
+        "paired_minus_frozen_count": 245,
+        "paired_minus_frozen_pp": 15.971316818774445,
+        "interval_95_pp": [
+          13.494132985658409,
+          18.44850065189048
+        ],
+        "improved": 327,
+        "degraded": 82,
+        "raw_sha256": "22ba3878401c81f94d74e96a28cbddddfe21068d1c9754f7fcb9bcc047720714",
+        "export_sha256": "62d6c192e2645d07ba243f207f71554b7c1b2b3e21df10af5728843f7616aaea"
+      },
+      "50": {
+        "correct_EX": 921,
+        "generated_tokens": 1149721,
+        "truncated": 1,
+        "turn_limit_exits": 102,
+        "paired_minus_frozen_count": 318,
+        "paired_minus_frozen_pp": 20.73011734028683,
+        "interval_95_pp": [
+          18.383311603650586,
+          23.142112125162974
+        ],
+        "improved": 367,
+        "degraded": 49,
+        "raw_sha256": "6170790b552304b08a9049227053f7fa8c1a39b003053f071abc9e5e2a65f1f3",
+        "export_sha256": "a9f3adbde4d0ae2088c58c93e5d90f91fe567b11a00a914f094729c56fc12701"
+      }
+    },
+    "bootstrap": {
+      "seed": 20261120,
+      "replicates": 10000,
+      "method": "paired question bootstrap"
+    }
+  },
+  "seed42_training": {
+    "gpu_model": "RTX PRO 6000",
+    "gpu_count": 4,
+    "completed_optimizer_updates": 52,
+    "failed_optimizer_update": 53,
+    "native_exit_code": 1,
+    "native_wall_seconds": 19081.613962,
+    "allocated_gpu_hours": 21.2,
+    "stop": "CUDA out of memory in the model backward pass during Triton autotuning of the FLA L2 normalization kernel"
+  }
+}

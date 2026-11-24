@@ -1,0 +1,7 @@
+{"attempt_id": "attempt-0", "condition": "synthetic-sampling", "correct": true, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-1", "condition": "synthetic-sampling", "correct": true, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-2", "condition": "synthetic-sampling", "correct": true, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-3", "condition": "synthetic-sampling", "correct": true, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-4", "condition": "synthetic-sampling", "correct": false, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-5", "condition": "synthetic-sampling", "correct": false, "question_id": "q1", "training_seed": null}
+{"attempt_id": "attempt-6", "condition": "synthetic-sampling", "correct": false, "question_id": "q1", "training_seed": null}

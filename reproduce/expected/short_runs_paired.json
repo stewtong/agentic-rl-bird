@@ -1,0 +1,102 @@
+{
+  "condition": "qwen35-9b-thinking-off",
+  "frozen_accuracy": 0.12255541069100391,
+  "mode": "primary",
+  "pooled_question_analysis": {
+    "analysis_rng_seed": 20261120,
+    "bootstrap_replicates": 10000,
+    "claim_rule": {
+      "passes": true,
+      "rule": "interval_95_percentile.low > 0.03",
+      "strictly_greater": true,
+      "threshold": 0.03
+    },
+    "interpretation": "Conditional on these three observed training seeds; trained binary outcomes are averaged within each question before subtracting the frozen binary outcome. This is not training-seed population uncertainty.",
+    "interval_95_percentile": {
+      "high": 0.06692742285962625,
+      "low": 0.03411560191221207
+    },
+    "interval_method": "percentile bootstrap with linearly interpolated 2.5/97.5 percentiles",
+    "point_estimate": 0.050412863972185994,
+    "resampling_unit": "question_id (including database_id when present)",
+    "trained_accuracy_mean_within_question": 0.1729682746631899
+  },
+  "question_count": 1534,
+  "schema_version": "bird-paired-analysis/v1",
+  "seed_specific": {
+    "42": {
+      "mcnemar": {
+        "discordant_questions": 291,
+        "exact_two_sided_p_value": 1.5252676608123467e-09,
+        "frozen_correct_trained_incorrect": 94,
+        "test": "exact conditional binomial McNemar; doubled smaller tail capped at 1",
+        "trained_correct_frozen_incorrect": 197
+      },
+      "paired_gain": {
+        "analysis_rng_seed": 20261117,
+        "bootstrap_replicates": 10000,
+        "interval_95_percentile": {
+          "high": 0.08865710560625815,
+          "low": 0.04563233376792699
+        },
+        "interval_method": "percentile bootstrap with linearly interpolated 2.5/97.5 percentiles",
+        "point_estimate": 0.06714471968709257,
+        "resampling_unit": "question_id (including database_id when present)"
+      },
+      "trained_accuracy": 0.1897001303780965
+    },
+    "43": {
+      "mcnemar": {
+        "discordant_questions": 288,
+        "exact_two_sided_p_value": 3.486552234901445e-11,
+        "frozen_correct_trained_incorrect": 88,
+        "test": "exact conditional binomial McNemar; doubled smaller tail capped at 1",
+        "trained_correct_frozen_incorrect": 200
+      },
+      "paired_gain": {
+        "analysis_rng_seed": 20261118,
+        "bootstrap_replicates": 10000,
+        "interval_95_percentile": {
+          "high": 0.0938722294654498,
+          "low": 0.05215123859191656
+        },
+        "interval_method": "percentile bootstrap with linearly interpolated 2.5/97.5 percentiles",
+        "point_estimate": 0.07301173402868318,
+        "resampling_unit": "question_id (including database_id when present)"
+      },
+      "trained_accuracy": 0.19556714471968709
+    },
+    "44": {
+      "mcnemar": {
+        "discordant_questions": 239,
+        "exact_two_sided_p_value": 0.300679317381905,
+        "frozen_correct_trained_incorrect": 111,
+        "test": "exact conditional binomial McNemar; doubled smaller tail capped at 1",
+        "trained_correct_frozen_incorrect": 128
+      },
+      "paired_gain": {
+        "analysis_rng_seed": 20261119,
+        "bootstrap_replicates": 10000,
+        "interval_95_percentile": {
+          "high": 0.030638852672750978,
+          "low": -0.009126466753585397
+        },
+        "interval_method": "percentile bootstrap with linearly interpolated 2.5/97.5 percentiles",
+        "point_estimate": 0.01108213820078227,
+        "resampling_unit": "question_id (including database_id when present)"
+      },
+      "trained_accuracy": 0.13363754889178617
+    }
+  },
+  "training_seed_spread": {
+    "maximum_gain": 0.07301173402868318,
+    "minimum_gain": 0.01108213820078227,
+    "population_standard_deviation": 0.027913974476357763,
+    "range": 0.061929595827900905
+  },
+  "training_seeds": [
+    "42",
+    "43",
+    "44"
+  ]
+}

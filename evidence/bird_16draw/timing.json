@@ -1,0 +1,533 @@
+{
+  "schema": "bird-16draw-timing/v1",
+  "native_seconds_method": "elapsed evaluation-phase seconds on one GPU; excludes model startup",
+  "slot_shape": "512 questions x 4 draws = 2,048 attempts on one RTX PRO 6000 card",
+  "saturation": [
+    [
+      {
+        "draws": 2,
+        "attempts": 512,
+        "native_seconds": 236
+      },
+      {
+        "draws": 4,
+        "attempts": 1024,
+        "native_seconds": 378
+      },
+      {
+        "draws": 8,
+        "attempts": 2048,
+        "native_seconds": 705
+      }
+    ],
+    [
+      {
+        "draws": 2,
+        "attempts": 1024,
+        "native_seconds": 391
+      },
+      {
+        "draws": 4,
+        "attempts": 2048,
+        "native_seconds": 727
+      },
+      {
+        "draws": 8,
+        "attempts": 4096,
+        "native_seconds": 1384
+      }
+    ]
+  ],
+  "session1_single_seed": {
+    "description": "Six-arm timing session covering frozen, seed 44 update 8, and seed 42 update 50 under 12-turn and 6-turn limits; isolated reruns replace initial repeat 2 for frozen-12turn and seed42-update50-6turn.",
+    "rows": [
+      {
+        "slot": "q512-seed44-update8-6turn-rep1",
+        "arm": "seed44-update8-6turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 615,
+        "native_exit_code": 0,
+        "generated_tokens": 623720,
+        "prompt_tokens": 6999112,
+        "cached_prompt_tokens": 5258658,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-6turn-rep1",
+        "arm": "seed42-update50-6turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1300,
+        "native_exit_code": 0,
+        "generated_tokens": 1223496,
+        "prompt_tokens": 18871843,
+        "cached_prompt_tokens": 15621509,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed44-update8-12turn-rep1",
+        "arm": "seed44-update8-12turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 758,
+        "native_exit_code": 0,
+        "generated_tokens": 766497,
+        "prompt_tokens": 9578592,
+        "cached_prompt_tokens": 7595527,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep1",
+        "arm": "frozen-12turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 864,
+        "native_exit_code": 0,
+        "generated_tokens": 823229,
+        "prompt_tokens": 11759654,
+        "cached_prompt_tokens": 9475261,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-6turn-rep1",
+        "arm": "frozen-6turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 694,
+        "native_exit_code": 0,
+        "generated_tokens": 642863,
+        "prompt_tokens": 9294413,
+        "cached_prompt_tokens": 7143442,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep1",
+        "arm": "seed42-update50-12turn",
+        "repeat": 1,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1585,
+        "native_exit_code": 0,
+        "generated_tokens": 1473343,
+        "prompt_tokens": 24971024,
+        "cached_prompt_tokens": 21444846,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed44-update8-12turn-rep2",
+        "arm": "seed44-update8-12turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 782,
+        "native_exit_code": 0,
+        "generated_tokens": 766989,
+        "prompt_tokens": 9525072,
+        "cached_prompt_tokens": 7594892,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep2",
+        "arm": "seed42-update50-12turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1666,
+        "native_exit_code": 0,
+        "generated_tokens": 1497275,
+        "prompt_tokens": 26219745,
+        "cached_prompt_tokens": 22385892,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep2",
+        "arm": "frozen-12turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 904,
+        "native_exit_code": 0,
+        "generated_tokens": 848133,
+        "prompt_tokens": 11899843,
+        "cached_prompt_tokens": 9617813,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-6turn-rep2",
+        "arm": "seed42-update50-6turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1280,
+        "native_exit_code": 0,
+        "generated_tokens": 1210688,
+        "prompt_tokens": 18585217,
+        "cached_prompt_tokens": 15437698,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-6turn-rep2",
+        "arm": "frozen-6turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 719,
+        "native_exit_code": 0,
+        "generated_tokens": 661957,
+        "prompt_tokens": 9685209,
+        "cached_prompt_tokens": 7501802,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed44-update8-6turn-rep2",
+        "arm": "seed44-update8-6turn",
+        "repeat": 2,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 597,
+        "native_exit_code": 0,
+        "generated_tokens": 622079,
+        "prompt_tokens": 7132799,
+        "cached_prompt_tokens": 5375346,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed44-update8-6turn-rep3",
+        "arm": "seed44-update8-6turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 617,
+        "native_exit_code": 0,
+        "generated_tokens": 610653,
+        "prompt_tokens": 6993150,
+        "cached_prompt_tokens": 5200589,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep3",
+        "arm": "seed42-update50-12turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1671,
+        "native_exit_code": 0,
+        "generated_tokens": 1520082,
+        "prompt_tokens": 25896140,
+        "cached_prompt_tokens": 22275376,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed44-update8-12turn-rep3",
+        "arm": "seed44-update8-12turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 797,
+        "native_exit_code": 0,
+        "generated_tokens": 772550,
+        "prompt_tokens": 9475912,
+        "cached_prompt_tokens": 7510354,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep3",
+        "arm": "frozen-12turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 945,
+        "native_exit_code": 0,
+        "generated_tokens": 871306,
+        "prompt_tokens": 12419981,
+        "cached_prompt_tokens": 10190851,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-6turn-rep3",
+        "arm": "frozen-6turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 715,
+        "native_exit_code": 0,
+        "generated_tokens": 664591,
+        "prompt_tokens": 9170968,
+        "cached_prompt_tokens": 7033144,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-6turn-rep3",
+        "arm": "seed42-update50-6turn",
+        "repeat": 3,
+        "isolated_rerun": false,
+        "attempts": 2048,
+        "native_seconds": 1268,
+        "native_exit_code": 0,
+        "generated_tokens": 1215010,
+        "prompt_tokens": 17756105,
+        "cached_prompt_tokens": 14885957,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep2-isolated",
+        "arm": "frozen-12turn",
+        "repeat": 2,
+        "isolated_rerun": true,
+        "attempts": 2048,
+        "native_seconds": 893,
+        "native_exit_code": 0,
+        "generated_tokens": 859029,
+        "prompt_tokens": 12545312,
+        "cached_prompt_tokens": 10223393,
+        "isolation_valid": true,
+        "isolation_note": "verified by one process spot check"
+      },
+      {
+        "slot": "q512-seed42-update50-6turn-rep2-isolated",
+        "arm": "seed42-update50-6turn",
+        "repeat": 2,
+        "isolated_rerun": true,
+        "attempts": 2048,
+        "native_seconds": 1255,
+        "native_exit_code": 0,
+        "generated_tokens": 1210052,
+        "prompt_tokens": 18236240,
+        "cached_prompt_tokens": 15151163,
+        "isolation_valid": true
+      }
+    ]
+  },
+  "session2_two_seed": {
+    "description": "Five-arm same-session timing covering frozen (12-turn and 6-turn), seed 42 update 50 (12-turn), and seed 43 update 50 (12-turn and 6-turn); repeat 1 lacked valid isolation evidence for frozen-6turn and seed43-update50-6turn.",
+    "rows": [
+      {
+        "slot": "q512-frozen-6turn-rep1",
+        "arm": "frozen-6turn",
+        "repeat": 1,
+        "attempts": 2048,
+        "native_seconds": 698,
+        "generated_tokens": 654138,
+        "prompt_tokens": 9392523,
+        "cached_prompt_tokens": 7225023,
+        "isolation_valid": false,
+        "initial_native_seconds": 742,
+        "rerun_native_seconds": 698,
+        "unresolved_reason": "initial attempt began isolation sampling late; rerun had background CPU overlap during the timed window"
+      },
+      {
+        "slot": "q512-seed43-update50-6turn-rep1",
+        "arm": "seed43-update50-6turn",
+        "repeat": 1,
+        "attempts": 2048,
+        "native_seconds": 1044,
+        "generated_tokens": 1046700,
+        "prompt_tokens": 12414137,
+        "cached_prompt_tokens": 9852790,
+        "isolation_valid": false,
+        "initial_native_seconds": 1060,
+        "rerun_native_seconds": 1044,
+        "unresolved_reason": "both initial attempt and rerun began isolation sampling late"
+      },
+      {
+        "slot": "q512-seed43-update50-12turn-rep1",
+        "arm": "seed43-update50-12turn",
+        "repeat": 1,
+        "attempts": 2048,
+        "native_seconds": 1372,
+        "generated_tokens": 1420168,
+        "prompt_tokens": 18192473,
+        "cached_prompt_tokens": 15111938,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep1",
+        "arm": "frozen-12turn",
+        "repeat": 1,
+        "attempts": 2048,
+        "native_seconds": 872,
+        "generated_tokens": 835003,
+        "prompt_tokens": 11309853,
+        "cached_prompt_tokens": 9136393,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep1",
+        "arm": "seed42-update50-12turn",
+        "repeat": 1,
+        "attempts": 2048,
+        "native_seconds": 1629,
+        "generated_tokens": 1500739,
+        "prompt_tokens": 25993514,
+        "cached_prompt_tokens": 22310756,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed43-update50-12turn-rep2",
+        "arm": "seed43-update50-12turn",
+        "repeat": 2,
+        "attempts": 2048,
+        "native_seconds": 1398,
+        "generated_tokens": 1479804,
+        "prompt_tokens": 18285836,
+        "cached_prompt_tokens": 15313178,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep2",
+        "arm": "frozen-12turn",
+        "repeat": 2,
+        "attempts": 2048,
+        "native_seconds": 859,
+        "generated_tokens": 807121,
+        "prompt_tokens": 12286234,
+        "cached_prompt_tokens": 9973824,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed43-update50-6turn-rep2",
+        "arm": "seed43-update50-6turn",
+        "repeat": 2,
+        "attempts": 2048,
+        "native_seconds": 1044,
+        "generated_tokens": 1068912,
+        "prompt_tokens": 12459345,
+        "cached_prompt_tokens": 9821887,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-6turn-rep2",
+        "arm": "frozen-6turn",
+        "repeat": 2,
+        "attempts": 2048,
+        "native_seconds": 698,
+        "generated_tokens": 646731,
+        "prompt_tokens": 9191041,
+        "cached_prompt_tokens": 7005424,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep2",
+        "arm": "seed42-update50-12turn",
+        "repeat": 2,
+        "attempts": 2048,
+        "native_seconds": 1580,
+        "generated_tokens": 1480615,
+        "prompt_tokens": 25027488,
+        "cached_prompt_tokens": 21374478,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed42-update50-12turn-rep3",
+        "arm": "seed42-update50-12turn",
+        "repeat": 3,
+        "attempts": 2048,
+        "native_seconds": 1593,
+        "generated_tokens": 1497868,
+        "prompt_tokens": 25317490,
+        "cached_prompt_tokens": 21626070,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed43-update50-12turn-rep3",
+        "arm": "seed43-update50-12turn",
+        "repeat": 3,
+        "attempts": 2048,
+        "native_seconds": 1380,
+        "generated_tokens": 1411013,
+        "prompt_tokens": 16627648,
+        "cached_prompt_tokens": 13750797,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-seed43-update50-6turn-rep3",
+        "arm": "seed43-update50-6turn",
+        "repeat": 3,
+        "attempts": 2048,
+        "native_seconds": 1027,
+        "generated_tokens": 1051420,
+        "prompt_tokens": 12482725,
+        "cached_prompt_tokens": 9901808,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-12turn-rep3",
+        "arm": "frozen-12turn",
+        "repeat": 3,
+        "attempts": 2048,
+        "native_seconds": 890,
+        "generated_tokens": 824910,
+        "prompt_tokens": 12434595,
+        "cached_prompt_tokens": 10083721,
+        "isolation_valid": true
+      },
+      {
+        "slot": "q512-frozen-6turn-rep3",
+        "arm": "frozen-6turn",
+        "repeat": 3,
+        "attempts": 2048,
+        "native_seconds": 716,
+        "generated_tokens": 660192,
+        "prompt_tokens": 9305163,
+        "cached_prompt_tokens": 7156630,
+        "isolation_valid": true
+      }
+    ]
+  },
+  "prefix_prompt_tokens": {
+    "frozen-12turn": {
+      "1": 9763739,
+      "2": 19204627,
+      "4": 38421963,
+      "16": 149905333
+    },
+    "frozen-6turn": {
+      "1": 6826111,
+      "2": 14039704,
+      "4": 28145692,
+      "16": 112269459
+    },
+    "seed42-update50-12turn": {
+      "1": 19265751,
+      "2": 39419400,
+      "4": 77757635,
+      "16": 315075955
+    },
+    "seed42-update50-6turn": {
+      "1": 14354808,
+      "2": 27928151,
+      "4": 56359588,
+      "16": 222324418
+    },
+    "seed43-update50-12turn": {
+      "1": 14162740,
+      "2": 27261925,
+      "4": 53305881,
+      "16": 215109611
+    },
+    "seed43-update50-6turn": {
+      "1": 9414447,
+      "2": 19101335,
+      "4": 38236380,
+      "16": 152688650
+    },
+    "seed44-update8-12turn": {
+      "1": 6894325,
+      "2": 14581825,
+      "4": 29489945,
+      "16": 114023632
+    },
+    "seed44-update8-6turn": {
+      "1": 5476514,
+      "2": 10872188,
+      "4": 21401082,
+      "16": 87535975
+    }
+  }
+}
