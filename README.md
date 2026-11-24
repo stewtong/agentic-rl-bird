@@ -123,15 +123,16 @@ The GPU path is partial. The repository includes the agent, reward, data prepara
 ## Limits
 
 - One model, one task family and one harness were tested. Two seeds were trained to update 50. The intervals resample questions and do not capture seed-to-seed variance. A third run, seed 44, has a scored adapter at update 8 and appears in `evidence/bird_16draw/` as an early-training reference.
-- The recovery rules, the thinking-on runs of the adapters and the Spider result-set grades were defined after the first results were known.
+- The recovery rules, the thinking-on runs of the adapters and the Spider result-set grades were defined after the first results were known. The readings that leave out answers taken from inside the reasoning (743 and the leads computed from it) are outside the recovery rules.
 - The 12-turn limits and the schema prompt were first used in evaluations on BIRD dev and then adopted for training, so the agent setup was chosen with dev results in view.
 - The 340 training questions come from BIRD train databases and the evaluation uses BIRD dev. No duplicate-question audit of the 340 against the 1,534 dev questions was run. `scripts/audit_bird_overlap.py` performs that audit given both dataset files.
 - The re-scoring graded every accepted first-draw answer again on an idle machine and was set to stop an arm with more than three disagreements with the in-run grade. Seed 43 had four, so its recovered scores come from a rerun that allowed four.
 - Nine regrades disagreed, on six questions. The cause was not established. Recovered answers were graded on an idle machine and as-run answers keep their in-run grades.
 - The replication rule fixed before seed 43 was trained required five checks to pass. Four passed: the first-draw lead, the matched-cost comparison against the frozen model at the 12-turn limits, and both any-of-16 comparisons. The fifth, a matched-cost comparison against the frozen model at the 6-turn limits, has one timing repeat that lacks a monitoring record showing nothing else ran on the machine. Under that rule `sampling_and_cost.py` prints the label "the update-50 result is seed-dependent".
+- Generated-token counts are sums over the saved samples and were not confirmed against server-side counts.
 - Cost is GPU-seconds on one card. Dollar cost, single-query latency, the selector's CPU time and a matched-cost comparison for thinking on were not measured.
 - Thinking on was set by a server configuration flag that the saved request settings do not record. The outputs show it was active: across draws 0 to 3 of the frozen model, 5,837 of 6,001 stored final answers contain a reasoning close tag with thinking on, against 17 of 5,979 with thinking off.
-- Spider questions have no exact match in BIRD. Paraphrase overlap was not tested, and the share of the Spider gain that comes from finishing with an answer was not measured.
+- Spider was evaluated with thinking off only. Spider questions have no exact match in BIRD. Paraphrase overlap was not tested, and the share of the Spider gain that comes from finishing with an answer was not measured.
 - Update 50 is the last scored checkpoint. Seed 42 stopped with an out-of-memory error at update 53, and seed 43 was stopped at update 50 by plan.
 - A larger frozen model, a supervised fine-tuning baseline and RL with thinking on were not run.
 
