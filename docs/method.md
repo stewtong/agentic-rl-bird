@@ -33,13 +33,21 @@ The per-question prompt carries the database ID, the question and the BIRD evide
 | Reward | Binary execution accuracy of the final SQL | Update-50 runs |
 | Agent limits | 12-turn limits | Update-50 runs |
 | Parallelism | Four RTX PRO 6000 cards, tensor parallel 1, data parallel 4, rollout engines on the same cards. The largest sampled device memory in the seed-42 run was 97,159 MiB | Update-50 runs |
+| Log-probability scoring | Chunk size 256 (`--log-probs-chunk-size 256`) | Update-50 runs |
+| Collective timeout | Miles default, 10 minutes | Update-50 runs |
 | LoRA | Rank 32, alpha 64, on the attention query-key-value and output projections and both MLP projections of every decoder layer | Included launcher |
 | Optimizer | Adam, betas 0.9 and 0.98, constant learning rate | Included launcher |
 | Sampling | Temperature 1.0 | Included launcher and evaluation |
 
 Rows marked "Included launcher" come from [`native/run_campaign_9b.sh`](../native/run_campaign_9b.sh), which is the launcher for an earlier setup. The update-50 runs used a later version of it that was not retained in this repository, so those rows are the closest recorded values. The included launcher requests eight GPUs; the update-50 runs used four.
 
-Both seeds used the settings above. Seed 42 stopped with a CUDA out-of-memory error at update 53, while Triton was autotuning the L2-normalization backward kernel of the flash-linear-attention library. Seed 43 ran with a fixed configuration for that kernel and a modified trainer file, and was stopped at update 50 by plan. Neither the kernel configuration nor the trainer change is included here. Two earlier seed-43 launches stopped at updates 6 and 12 and are excluded from its reported GPU-hours.
+Both seeds used the settings above. Seed 42 stopped with a CUDA out-of-memory error at update 53, while Triton was autotuning the L2-normalization backward kernel of the flash-linear-attention library. Seed 43 ran with a fixed configuration for that kernel, loaded through a change to its trainer file, and was stopped at update 50 by plan. Neither the kernel configuration nor the trainer change is included here. Two earlier seed-43 launches stopped at updates 6 and 12 and are excluded from its reported GPU-hours.
+
+Before the four-card runs, the included launcher's arguments were run on eight RTX PRO 6000 cards with the six-turn setup and seed 42. One invocation was stopped with no update because of a wrong validation path. The next launch completed no update. At the first gradient synchronization one training rank waited 10 minutes, the Miles default collective timeout, for another, and the launch exited. The cause of the wait was not established. A further launch, on a second node, used a 60-minute timeout and a one-file change to Miles that keeps the timeout when process groups are re-created. It completed one update, then failed on a 35.74 GiB allocation during log-probability scoring. The two launches differed in node as well as timeout, so they do not show why the wait did not recur. None of these launches is counted in the reported GPU-hours.
+
+Both update-50 runs then used four cards and the chunk size above. They also ran with changes to three Miles files that are not included here. The process-group change is the one described above. A data-path change pads each sample to its own length, rounded up to a multiple of 128 tokens. At the [pinned commit](../native/README.md#software-the-study-ran-on), with `--qkv-format bshd`, Miles pads every sample to the longest sequence in its data-parallel shard. One added call in the trainer file releases cached GPU memory before each training step. Seed 43's trainer file carries that call and loads the kernel configuration.
+
+A 12-update check on eight GPUs (seed 43) used the seed-43 run's settings and changes with a 60-minute timeout. It ran 12 updates with no memory or synchronization failure and was stopped after update 12 by plan. It was not scored, its GPU-hours are not in the reported totals, and its records are not in this repository.
 
 A third run, seed 44, used the same settings and has a scored adapter at update 8. It appears in the 16-draw and timing evidence as an early-training reference.
 
